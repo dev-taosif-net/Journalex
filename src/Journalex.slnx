@@ -1,1 +1,9 @@
-<Solution />
+<Solution>
+  <Folder Name="/Services/" />
+  <Folder Name="/Services/Submission/">
+    <Project Path="Services/Submission/Submission.API/Submission.API.csproj" Id="e228d76b-24cf-47ac-95aa-ff9c7c0bb8eb" />
+    <Project Path="Services/Submission/Submission.Application/Submission.Application.csproj" />
+    <Project Path="Services/Submission/Submission.Domain/Submission.Domain.csproj" />
+    <Project Path="Services/Submission/Submission.Persistence/Submission.Persistence.csproj" />
+  </Folder>
+</Solution>
