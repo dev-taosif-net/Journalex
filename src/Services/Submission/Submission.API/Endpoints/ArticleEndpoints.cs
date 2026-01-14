@@ -1,3 +1,6 @@
+using MediatR;
+using Submission.Application.Features.CreateArticle;
+
 namespace Submission.API.Endpoints;
 
 public static class ArticleEndpoints
@@ -6,11 +9,10 @@ public static class ArticleEndpoints
     {
         var app = endpoints.MapGroup("/articles");
         
-        app.MapPost("", async () =>
+        app.MapPost("", async (CreateArticleCommand command, ISender sender) =>
             {
-                // var response = await sender.Send(command);
-                // return Results.Created($"/api/articles/{response.Id}", response);
-
+                var response = await sender.Send(command);
+                return Results.Created($"/api/articles/{response.Id}", response);
             })
             .RequireAuthorization(policy => policy.RequireRole("AUT"))
             .WithName("CreateArticle")
